@@ -6,7 +6,25 @@ string name = GetName();
 
 Console.WriteLine(
     $"Hello {name}, press any key to roll the dice");
-Console.WriteLine(RollDice());
+Console.ReadLine();
+
+int playerRoll = RollDice();
+int computerRoll = RollDice();
+
+if (playerRoll == computerRoll)
+{
+    Console.WriteLine($"You both rolled {playerRoll}");
+    Console.WriteLine("Draw");
+} else if (playerRoll > computerRoll)
+{
+    Console.WriteLine($"You rolled {playerRoll} while the computer rolled {computerRoll}");
+    Console.WriteLine("You win");
+}
+else
+{
+    Console.WriteLine($"You rolled {playerRoll} while the computer rolled {computerRoll}");
+    Console.WriteLine("You lose");
+}
 
 static string GetName()
 {
